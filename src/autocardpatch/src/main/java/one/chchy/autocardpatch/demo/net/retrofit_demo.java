@@ -1,6 +1,5 @@
 package one.chchy.autocardpatch.demo.net;
 
-import com.oracle.tools.packager.Log;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import one.chchy.autocardpatch.demo.net.ihttp.INewhr;
