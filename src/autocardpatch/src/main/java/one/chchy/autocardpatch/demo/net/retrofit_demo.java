@@ -9,11 +9,12 @@ import one.chchy.autocardpatch.security.RSAEncrypt;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.springframework.lang.Nullable;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
 import java.io.IOException;
 
 public class retrofit_demo {
@@ -84,6 +85,34 @@ public class retrofit_demo {
 
                             System.out.println(((ResponseBody)loginResponse.body()).string());
                         } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        try {
+                            Call getSelfDayResult = iNewhr.getDayResult();
+
+                            Response selfDayResult = getSelfDayResult.execute();
+
+                            String selfDayResultSource = ((ResponseBody)selfDayResult.body()).string();
+                            System.out.println(selfDayResultSource);
+
+                            Document selfDayDocument = Jsoup.parse(selfDayResultSource);
+
+                            Elements selfDayElement = selfDayDocument.select("input");
+                            Element eventarget = selfDayDocument.getElementById("__EVENTTARGET");
+                            Element eventargument = selfDayDocument.getElementById("__EVENTARGUMENT");
+                            Element viewstate = selfDayDocument.getElementById("__VIEWSTATE");
+                            Element stategenerator = selfDayDocument.getElementById("__VIEWSTATEGENERATOR");
+                            Element dateQuery = selfDayDocument.getElementById("DateQuery_rb1");
+                            Element txtYearMonth = selfDayDocument.getElementById("DateQuery_txtYearMonth");
+                            Element txtDate1 = selfDayDocument.getElementById("DateQuery_txtDate1");
+                            Element btnLoadData = selfDayDocument.getElementById("btnLoadData");
+                            Element txtDate2 = selfDayDocument.getElementById("DateQuery_txtDate2");
+                            Element rad2 = selfDayDocument.getElementById("rad2");
+                            Element txtRecord = selfDayDocument.getElementById("grdData_tcChangePage_txtRecord");
+                            Element hid = selfDayDocument.getElementById("hid");
+
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
 
