@@ -1,4 +1,8 @@
 # newhr分析文档
+## wireshark筛选表达式
+```
+(ip.dst == 125.77.116.75 or ip.src == 125.77.116.75) and http
+```
 ## 登陆
 ### doLogin
 1. 参数
@@ -687,3 +691,7 @@ function Base64() {
     }
 }
 ```
+## 日结果
+### 网址
+http://newhr.itep.com.cn/HR/Att/SelfDayResulft.aspx
+详细请求请查看抓包

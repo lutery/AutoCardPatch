@@ -1,6 +1,5 @@
 package one.chchy.autocardpatch.demo.net;
 
-import com.oracle.tools.packager.Log;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import one.chchy.autocardpatch.demo.net.ihttp.INewhr;
@@ -10,12 +9,14 @@ import one.chchy.autocardpatch.security.RSAEncrypt;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.springframework.lang.Nullable;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
 import java.io.IOException;
+import java.util.Optional;
 
 public class retrofit_demo {
 
@@ -69,7 +70,7 @@ public class retrofit_demo {
                         System.out.println(randSeed);
 
                         try {
-                            Call loginCall = iNewhr.get(RSAEncrypt.encrypt(RSAEncrypt.encode64Str("chenghui", "0147258369qQ_", randSeed, "1")));
+                            Call loginCall = iNewhr.get(RSAEncrypt.encrypt(RSAEncrypt.encode64Str("chenghui", "0147258369qQ+", randSeed, "1")));
 
                             Response loginResponse = loginCall.execute();
 
@@ -85,6 +86,54 @@ public class retrofit_demo {
 
                             System.out.println(((ResponseBody)loginResponse.body()).string());
                         } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        try {
+                            Call getSelfDayResult = iNewhr.getDayResult();
+
+                            Response selfDayResult = getSelfDayResult.execute();
+
+                            String selfDayResultSource = ((ResponseBody)selfDayResult.body()).string();
+                            System.out.println(selfDayResultSource);
+
+                            Document selfDayDocument = Jsoup.parse(selfDayResultSource);
+
+                            Elements selfDayElement = selfDayDocument.select("input");
+                            Optional<Element> eventarget = Optional.ofNullable(selfDayDocument.getElementById("__EVENTTARGET"));
+                            Optional<Element> eventargument = Optional.ofNullable(selfDayDocument.getElementById("__EVENTARGUMENT"));
+                            Optional<Element> viewstate = Optional.ofNullable(selfDayDocument.getElementById("__VIEWSTATE"));
+                            Optional<Element> stategenerator = Optional.ofNullable(selfDayDocument.getElementById("__VIEWSTATEGENERATOR"));
+                            Optional<Element> dateQuery = Optional.ofNullable(selfDayDocument.getElementById("DateQuery_rb1"));
+                            Optional<Element> txtYearMonth = Optional.ofNullable(selfDayDocument.getElementById("DateQuery_txtYearMonth"));
+                            Optional<Element> txtDate1 = Optional.ofNullable(selfDayDocument.getElementById("DateQuery_txtDate1"));
+                            Optional<Element> btnLoadData = Optional.ofNullable(selfDayDocument.getElementById("btnLoadData"));
+                            Optional<Element> txtDate2 = Optional.ofNullable(selfDayDocument.getElementById("DateQuery_txtDate2"));
+                            Optional<Element> rad2 = Optional.ofNullable(selfDayDocument.getElementById("rad2"));
+                            Optional<Element> txtRecord = Optional.ofNullable(selfDayDocument.getElementById("grdData_tcChangePage_txtRecord"));
+                            Optional<Element> hid = Optional.ofNullable(selfDayDocument.getElementById("hid"));
+
+                            Call postSelfDayResult = iNewhr.postDayResult(
+                                    eventarget.map(t -> t.attr("value")).orElse(""),
+                                    eventargument.map(t -> t.attr("value")).orElse(""),
+                                    viewstate.map(t -> t.attr("value")).orElse(""),
+                                    stategenerator.map(t -> t.attr("value")).orElse(""),
+                                    dateQuery.map(t -> t.attr("value")).orElse(""),
+                                    txtYearMonth.map(t -> t.attr("value")).orElse(""),
+                                    txtDate1.map(t -> t.attr("value")).orElse(""),
+                                    txtDate2.map(t -> t.attr("value")).orElse(""),
+                                    /*btnLoadData.map(t -> t.attr("value")).orElse("")*/"33",
+                                    /*btnLoadData.map(t -> t.attr("value")).orElse("")*/"8",
+                                    txtRecord.map(t -> t.attr("value")).orElse(""),
+                                    rad2.map(t -> t.attr("value")).orElse(""),
+                                    hid.map(t -> t.attr("value")).orElse("")
+                            );
+
+                            Response postResponse  = postSelfDayResult.execute();
+
+                            System.out.println(((ResponseBody)postResponse.body()).string());
+
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
 

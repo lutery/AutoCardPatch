@@ -26,7 +26,12 @@ public class ReceivedCookiesInterceptor  implements Interceptor {
 //            config.putStringSet("cookie", cookies);
 //            config.commit();
 
-            CookieUtil.cookies.put("cookie", cookies);
+//            if (CookieUtil.cookies.containsKey("cookie")){
+//                CookieUtil.cookies.get("cookie").addAll(cookies);
+//            }
+//            else {
+                CookieUtil.setCookies("cookie", cookies);
+//            }
         }
 
         return originalResponse;

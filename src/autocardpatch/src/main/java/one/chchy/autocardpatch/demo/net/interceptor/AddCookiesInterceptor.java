@@ -21,10 +21,12 @@ public class AddCookiesInterceptor implements Interceptor {
 //            }
 //        }
 
-        if (CookieUtil.cookies.containsKey("cookie")) {
-            for (String cookie : CookieUtil.cookies.get("cookie")) {
-                builder.addHeader("Cookie", cookie);
+        if (CookieUtil.contains("cookie")) {
+            StringBuilder cookieVal = new StringBuilder();
+            for (String cookie : CookieUtil.getCookies("cookie")) {
+                cookieVal.append(cookie).append(";");
             }
+            builder.addHeader("Cookie", cookieVal.toString());
         }
 
         return chain.proceed(builder.build());
