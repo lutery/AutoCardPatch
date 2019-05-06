@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://newhr.itep.com.cn/HR/default.aspx?Mode=ESS -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="RadForm RadForm_Simple rfdButton rfdScrollBars rfdZone rfdRadio rfdCheckbox"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+
+</title><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"><link rel="stylesheet" type="text/css" href="./HaveResult_files/MainT.css"><link rel="stylesheet" type="text/css" href="./HaveResult_files/navbar2.css"><link rel="stylesheet" type="text/css" href="./HaveResult_files/Logo.css">
+    <script src="./HaveResult_files/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var IsSubmit = false;
+        var IsSignOut = false;
+        function DoSubmit() { IsSubmit = true; return true; }
+        function SignOut(close) {
+            if (IsSubmit || IsSignOut) return;
+            if (close) {
+                window.open("LogOut.aspx?Close=1", "_top", "");
+            } else {
+                IsSignOut = true;
+                window.open("LogOut.aspx", "_top", "");
+            }
+        }
+    </script>
+<link href="./HaveResult_files/Telerik.Web.UI.WebResource.axd" type="text/css" rel="stylesheet"></head>
+<body id="bdy" onunload="SignOut(true);"><div class="RadSplitter" style="display: none; position: absolute; cursor: w-resize; z-index: 2;"><div class="rspHelperBarDrag" style="cursor: w-resize; font-size: 1px; margin: 0px 150px;"><!-- / --></div></div>
+    <form name="form1" method="post" action="http://newhr.itep.com.cn/HR/default.aspx?Mode=ESS" id="form1" onsubmit="return DoSubmit();">
+<div>
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value=";;System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:zh-CN:16997a38-7253-4f67-80d9-0cbcc01b3057:ea597d4b:b25378d2;Telerik.Web.UI, Version=2014.2.724.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4:zh-CN:b3bb75dd-6103-4997-8feb-efbc43ce5875:16e4e7cd:86526ba7:f7645509:24ee1bba:11a04f7e:f46195d3:2003d0b8:88144a7a:1e771326:aa288e2d:258f1c72:874f8ea2:c128760b:19620875:92fe8ea0:fa31b949:490a9d4e:bd8f85e4">
+<input type="hidden" name="RadStyleSheet1_TSSM" id="RadStyleSheet1_TSSM" value=";Telerik.Web.UI, Version=2014.2.724.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4:zh-CN:b3bb75dd-6103-4997-8feb-efbc43ce5875:ef4a543:5c0abcde:1c2121e:92753c09;Telerik.Web.UI.Skins, Version=2014.2.724.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4:zh-CN:b75d2efa-8dcd-4c28-9037-d5ad9e3cb5ba:4a5b15d9:317d172d:3e748c5d:2aabe03f">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTIzNTQ0Nzk2Ng9kFgICAw9kFgYCBQ8PFgYeFUVuYWJsZUVtYmVkZGVkU2NyaXB0c2ceHEVuYWJsZUVtYmVkZGVkQmFzZVN0eWxlc2hlZXRnHhJSZXNvbHZlZFJlbmRlck1vZGULKXJUZWxlcmlrLldlYi5VSS5SZW5kZXJNb2RlLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDE0LjIuNzI0LjM1LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQBFgIeBXN0eWxlBQ1kaXNwbGF5Om5vbmU7ZAIHDw8WBh8AZx8CCysEAR8BZ2QWBGYPDxYEHwBnHwILKwQBZBYOZg8WAh4EVGV4dAWKATxsaSBjbGFzcz0iTmF2SXRlbSI+PGEgb25jbGljaz0iTSh0aGlzLCcyOScsMCkiPuW3peS9nOahjOmdojwvYT48L2xpPjxsaSBjbGFzcz0iTmF2SXRlbSI+PGEgb25jbGljaz0iTSh0aGlzLCcyMScsMSkiPuWRmOW3peiHquWKqTwvYT48L2xpPmQCAQ8PFgIeB1Rvb2xUaXAFFOaCqOaciTDmnaHmlrDmtojmga8hZBYCZg8WAh8EBQEwZAICDxYCHgRTa2luBQZTaW1wbGUWAmYPFCsAAg8WCh4TY2FjaGVkU2VsZWN0ZWRWYWx1ZWQfAGcfAWcfAgsrBAEfBAUGU2ltcGxlZBAWFGYCAQICAgMCBAIFAgYCBwIIAgkCCgILAgwCDQIOAg8CEAIRAhICExYUFCsAAg8WBh8EBQVCbGFjax4FVmFsdWUFBUJsYWNrHghTZWxlY3RlZGhkZBQrAAIPFgYfBAUPQmxhY2tNZXRyb1RvdWNoHwgFD0JsYWNrTWV0cm9Ub3VjaB8JaGRkFCsAAg8WBh8EBQdEZWZhdWx0HwgFB0RlZmF1bHQfCWhkZBQrAAIPFgYfBAUER2xvdx8IBQRHbG93HwloZGQUKwACDxYGHwQFBU1ldHJvHwgFBU1ldHJvHwloZGQUKwACDxYGHwQFCk1ldHJvVG91Y2gfCAUKTWV0cm9Ub3VjaB8JaGRkFCsAAg8WBh8EBQpPZmZpY2UyMDA3HwgFCk9mZmljZTIwMDcfCWhkZBQrAAIPFgYfBAUPT2ZmaWNlMjAxMEJsYWNrHwgFD09mZmljZTIwMTBCbGFjax8JaGRkFCsAAg8WBh8EBQ5PZmZpY2UyMDEwQmx1ZR8IBQ5PZmZpY2UyMDEwQmx1ZR8JaGRkFCsAAg8WBh8EBRBPZmZpY2UyMDEwU2lsdmVyHwgFEE9mZmljZTIwMTBTaWx2ZXIfCWhkZBQrAAIPFgYfBAUHT3V0bG9vax8IBQdPdXRsb29rHwloZGQUKwACDxYGHwQFBFNpbGsfCAUEU2lsax8JaGRkFCsAAg8WBh8EBQZTaW1wbGUfCAUGU2ltcGxlHwlnZGQUKwACDxYGHwQFFVNpdGVmaW5pdHkgKE9ic29sZXRlKR8IBQpTaXRlZmluaXR5HwloZGQUKwACDxYGHwQFBlN1bnNldB8IBQZTdW5zZXQfCWhkZBQrAAIPFgYfBAUHVGVsZXJpax8IBQdUZWxlcmlrHwloZGQUKwACDxYGHwQFBVZpc3RhHwgFBVZpc3RhHwloZGQUKwACDxYGHwQFBVdlYjIwHwgFBVdlYjIwHwloZGQUKwACDxYGHwQFB1dlYkJsdWUfCAUHV2ViQmx1ZR8JaGRkFCsAAg8WBh8EBQhXaW5kb3dzNx8IBQhXaW5kb3dzNx8JaGRkDxYUZmZmZmZmZmZmZmZmZmZmZmZmZmYWAQV3VGVsZXJpay5XZWIuVUkuUmFkQ29tYm9Cb3hJdGVtLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDE0LjIuNzI0LjM1LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQWLGYPDxYEHghDc3NDbGFzcwUJcmNiSGVhZGVyHgRfIVNCAgJkZAIBDw8WBB8KBQlyY2JGb290ZXIfCwICZGQCAg8PFgYfBAUFQmxhY2sfCAUFQmxhY2sfCWhkZAIDDw8WBh8EBQ9CbGFja01ldHJvVG91Y2gfCAUPQmxhY2tNZXRyb1RvdWNoHwloZGQCBA8PFgYfBAUHRGVmYXVsdB8IBQdEZWZhdWx0HwloZGQCBQ8PFgYfBAUER2xvdx8IBQRHbG93HwloZGQCBg8PFgYfBAUFTWV0cm8fCAUFTWV0cm8fCWhkZAIHDw8WBh8EBQpNZXRyb1RvdWNoHwgFCk1ldHJvVG91Y2gfCWhkZAIIDw8WBh8EBQpPZmZpY2UyMDA3HwgFCk9mZmljZTIwMDcfCWhkZAIJDw8WBh8EBQ9PZmZpY2UyMDEwQmxhY2sfCAUPT2ZmaWNlMjAxMEJsYWNrHwloZGQCCg8PFgYfBAUOT2ZmaWNlMjAxMEJsdWUfCAUOT2ZmaWNlMjAxMEJsdWUfCWhkZAILDw8WBh8EBRBPZmZpY2UyMDEwU2lsdmVyHwgFEE9mZmljZTIwMTBTaWx2ZXIfCWhkZAIMDw8WBh8EBQdPdXRsb29rHwgFB091dGxvb2sfCWhkZAINDw8WBh8EBQRTaWxrHwgFBFNpbGsfCWhkZAIODw8WBh8EBQZTaW1wbGUfCAUGU2ltcGxlHwlnZGQCDw8PFgYfBAUVU2l0ZWZpbml0eSAoT2Jzb2xldGUpHwgFClNpdGVmaW5pdHkfCWhkZAIQDw8WBh8EBQZTdW5zZXQfCAUGU3Vuc2V0HwloZGQCEQ8PFgYfBAUHVGVsZXJpax8IBQdUZWxlcmlrHwloZGQCEg8PFgYfBAUFVmlzdGEfCAUFVmlzdGEfCWhkZAITDw8WBh8EBQVXZWIyMB8IBQVXZWIyMB8JaGRkAhQPDxYGHwQFB1dlYkJsdWUfCAUHV2ViQmx1ZR8JaGRkAhUPDxYGHwQFCFdpbmRvd3M3HwgFCFdpbmRvd3M3HwloZGQCAw8WAh4HVmlzaWJsZWhkAgQPFgIfDGhkAgUPFgIfDGhkAgYPFgIfDGhkAgEPDxYEHwBnHwILKwQBZBYCAgEPDxYKHgZIZWlnaHQbAAAAAADAdUABAAAAHgVXaWR0aBsAAAAAAAB5QAEAAAAfAGcfAWcfAgsrBAFkFgZmDw8WCh4KQ29udGVudFVybAUkL0hSL0RlZmF1bHQyTmF2LmFzcHg/bUlkPTIxJm1vZGU9RVNTHw0bAAAAAADAdUABAAAAHg5PcmlnaW5hbEhlaWdodBsAAAAAAMB1QAEAAAAfAGcfAgsrBAFkZAIBDxQrAAIPFgQfAGcfAgsrBAFkZGQCAg8PFggfDRsAAAAAAMB1QAEAAAAfEBsAAAAAAMB1QAEAAAAfAGcfAgsrBAFkZAIJDxQrAAIUKwADDxYGHwILKwQBHwBnHwFnZGRkZGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgoFEVJhZEZvcm1EZWNvcmF0b3IxBQxSYWRTcGxpdHRlcjEFB3RvcFBhbmUFC1NraW5DaG9vc2VyBQtjb250ZW50UGFuZQUMUmFkU3BsaXR0ZXIyBQhsZWZ0UGFuZQUMUmFkU3BsaXRCYXIxBQlyaWdodFBhbmUFBWN0bDA3BQtTa2luQ2hvb3Nlcg8UKwACBQZTaW1wbGUFBlNpbXBsZWQnID2dD4W1DFvfovEn1uET5+Np1g==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./HaveResult_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./HaveResult_files/Telerik.Web.UI.WebResource(1).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax 客户端框架未能加载。');
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="85F3DF72">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', document.getElementById('form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+    
+    <div id="RadFormDecorator1" class="RadFormDecorator" style="display:none;">
+	<!-- 2014.2.724.35 --><script type="text/javascript">
+//<![CDATA[
+if (typeof(WebForm_AutoFocus) != 'undefined')
+{
+	var old_WebForm_AutoFocus = WebForm_AutoFocus;
+	WebForm_AutoFocus = function(arg)
+	{
+		Sys.Application.add_load(function()
+		{
+			old_WebForm_AutoFocus(arg);
+			WebForm_AutoFocus = old_WebForm_AutoFocus;
+		});
+	}
+}
+if (typeof(Telerik) != 'undefined' && Type.isNamespace(Telerik.Web))
+{
+	if (Telerik.Web.UI.RadFormDecorator)
+	{
+		Telerik.Web.UI.RadFormDecorator.initializePage("RadFormDecorator1", "", "Simple", 1039);
+	}
+}
+//]]>
+</script><input id="RadFormDecorator1_ClientState" name="RadFormDecorator1_ClientState" type="hidden">
+</div>
+    <div id="RadSplitter1" style="width: 100%; height: 885px;"><div style=""><table id="RAD_SPLITTER_RadSplitter1" class="RadSplitter RadSplitter_Simple" style="width:1px;height:1px;border-left-width:0px;border-top-width:0px;">
+	<tbody><tr id="RAD_SPLITTER_PANE_TR_topPane">
+		<td id="topPane" class="rspPaneHorizontal rspFirstItem" style="border-right-width:0px;border-bottom-width:0px;"><div id="RAD_SPLITTER_PANE_CONTENT_topPane" style="width: 1680px; height: 52px; overflow: auto;">
+            <div id="header" style="overflow:hidden">
+                <div id="logo">
+                   <img id="imgLogo" src="./HaveResult_files/TopShowPhoto.aspx">
+                </div>
+                <div id="TopFunDiv">
+                    <ul id="navlist" class="nav">
+                        <li class="NavItem"><a onclick="M(this,&#39;29&#39;,0)">工作桌面</a></li><li class="NavItem"><a onclick="M(this,&#39;21&#39;,1)">员工自助</a></li>
+                    </ul>
+                     <div id="UserFunDiv">
+                           <ul class="nav">
+                            <li class="dropdown NavItem">
+                                <a class="dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+                                    <span id="Label1" title="您有0条新消息!" class="user_numb">0</span>
+                                    <span id="user_name">程辉</span>
+                                </a>
+                                <ul class="pull-right dropdown-menu">
+                                    <li id="selectUI">
+                                        <a href="http://newhr.itep.com.cn/HR/default.aspx?Mode=ESS#" title="Simple是系统默认主题">
+                                            <div id="SkinChooser" class="RadComboBox RadComboBox_Simple" style="width:160px;white-space:normal;">
+			<table summary="combobox" border="0" style="border-width:0;border-collapse:collapse;width:100%">
+				<tbody><tr class="rcbReadOnly">
+					<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="SkinChooser" type="text" class="rcbInput radPreventDecorate" id="SkinChooser_Input" value="Simple" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="SkinChooser_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+				</tr>
+			</tbody></table><div class="rcbSlide" style="z-index:6000;"><div id="SkinChooser_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Simple " style="display:none;"><div class="rcbScroll rcbWidth" style="width:100%;"><ul class="rcbList" style="list-style:none;margin:0;padding:0;zoom:1;"><li class="rcbItem">Black</li><li class="rcbItem">BlackMetroTouch</li><li class="rcbItem">Default</li><li class="rcbItem">Glow</li><li class="rcbItem">Metro</li><li class="rcbItem">MetroTouch</li><li class="rcbItem">Office2007</li><li class="rcbItem">Office2010Black</li><li class="rcbItem">Office2010Blue</li><li class="rcbItem">Office2010Silver</li><li class="rcbItem">Outlook</li><li class="rcbItem">Silk</li><li class="rcbItem">Simple</li><li class="rcbItem">Sitefinity (Obsolete)</li><li class="rcbItem">Sunset</li><li class="rcbItem">Telerik</li><li class="rcbItem">Vista</li><li class="rcbItem">Web20</li><li class="rcbItem">WebBlue</li><li class="rcbItem">Windows7</li></ul></div></div></div><input id="SkinChooser_ClientState" name="SkinChooser_ClientState" type="hidden" autocomplete="off">
+		</div>
+                                        </a>
+                                    </li>
+                                    <li class="divider"><div></div></li>
+                                    <li><a onclick="javascript:ReloadCurMain(&#39;WebPub/NoticeView.aspx&#39;);">查阅消息</a></li>
+                                    <li class="divider"><div></div></li>
+                                    <li><a onclick="javascript:ReloadCurMain(&#39;root/ChangePsd.aspx&#39;);">修改密码</a></li>
+                                    <li class="divider"><div></div></li>
+                                    <li><a onclick="javascript:location.href=&#39;Default.aspx?MenuType=2&amp;mode=ESS&#39;;">切换功能菜单</a></li>
+                                    
+                                    
+                                </ul>
+                            </li>
+                            <li style="font-size:18px;line-height:2.5">|</li>
+                            
+                            
+                            <li class="NavItem">
+                                <a href="http://newhr.itep.com.cn/HR/default.aspx?Mode=ESS#" onclick="javascript:SignOut();">注销</a>
+                            </li>
+                        </ul> 
+                        </div>
+                </div>
+            </div>
+        </div><input id="topPane_ClientState" name="topPane_ClientState" type="hidden" autocomplete="off" value="{&quot;_originalWidth&quot;:&quot;&quot;,&quot;_originalHeight&quot;:&quot;52px&quot;,&quot;_collapsedDirection&quot;:1,&quot;_scrollLeft&quot;:0,&quot;_scrollTop&quot;:0,&quot;_expandedSize&quot;:0,&quot;width&quot;:1680,&quot;height&quot;:52,&quot;collapsed&quot;:false,&quot;contentUrl&quot;:&quot;&quot;,&quot;minWidth&quot;:20,&quot;maxWidth&quot;:10000,&quot;minHeight&quot;:20,&quot;maxHeight&quot;:10000,&quot;locked&quot;:false}"></td>
+	</tr><tr id="RAD_SPLITTER_PANE_TR_contentPane">
+		<td id="contentPane" class="rspPaneHorizontal rspLastItem" style="border-right-width:0px;border-bottom-width:0px;"><div id="RAD_SPLITTER_PANE_CONTENT_contentPane" style="width: 1680px; height: 833px; overflow: hidden;">
+            <div id="RadSplitter2" style="width: 1680px; height: 833px;"><div><table id="RAD_SPLITTER_RadSplitter2" class="RadSplitter RadSplitter_Simple rspNested" style="width:1px;height:1px;">
+			<tbody><tr>
+				<td id="leftPane" class="rspPane rspFirstItem" style="border-right-width:1px;"><div id="RAD_SPLITTER_PANE_CONTENT_leftPane" style="width: 140px; height: 833px; overflow: hidden;"><iframe name="leftPane" id="RAD_SPLITTER_PANE_EXT_CONTENT_leftPane" src="./HaveResult_files/Default2Nav.html" frameborder="0" scrolling="no" style="border: 0px; width: 140px; height: 833px;"></iframe></div><input id="leftPane_ClientState" name="leftPane_ClientState" type="hidden" value="{&quot;_originalWidth&quot;:&quot;140px&quot;,&quot;_originalHeight&quot;:&quot;348px&quot;,&quot;_collapsedDirection&quot;:1,&quot;_scrollLeft&quot;:0,&quot;_scrollTop&quot;:0,&quot;_expandedSize&quot;:0,&quot;width&quot;:140,&quot;height&quot;:833,&quot;collapsed&quot;:false,&quot;contentUrl&quot;:&quot;/HR/Default2Nav.aspx?mId=21&amp;mode=ESS&quot;,&quot;minWidth&quot;:20,&quot;maxWidth&quot;:10000,&quot;minHeight&quot;:20,&quot;maxHeight&quot;:10000,&quot;locked&quot;:false}" autocomplete="off"></td><td class="rspResizeBar" id="RadSplitBar1" style="border-right-width: 1px; cursor: w-resize;" unselectable="on"><input id="RAD_SPLITTER_BAR_COLLAPSE_Forward_RadSplitBar1" class="rspCollapseBarCollapse" title="Collapse/expand the left pane" type="button" value=" " unselectable="on"><input id="RAD_SPLITBAR_SPACER_RadSplitBar1" class="rspCollapseBarSpacer" style="width:4px;height:1px;line-height:1px;" type="button" value=" "><div style="display:none;">
+					<input id="RadSplitBar1_ClientState" name="RadSplitBar1_ClientState" type="hidden" autocomplete="off">
+				</div></td><td id="rightPane" class="rspPane rspLastItem" style="border-right-width:1px;"><div id="RAD_SPLITTER_PANE_CONTENT_rightPane" style="width: 1534px; height: 833px; overflow: hidden;"><iframe name="rightPane" id="RAD_SPLITTER_PANE_EXT_CONTENT_rightPane" src="./HaveResult_files/SelfDayResulft.html" frameborder="0" scrolling="no" style="border: 0px; width: 1534px; height: 833px;"></iframe></div><input id="rightPane_ClientState" name="rightPane_ClientState" type="hidden" autocomplete="off" value="{&quot;_originalWidth&quot;:&quot;&quot;,&quot;_originalHeight&quot;:&quot;348px&quot;,&quot;_collapsedDirection&quot;:1,&quot;_scrollLeft&quot;:0,&quot;_scrollTop&quot;:0,&quot;_expandedSize&quot;:0,&quot;width&quot;:1534,&quot;height&quot;:833,&quot;collapsed&quot;:false,&quot;contentUrl&quot;:&quot;Att/SelfDayResulft.aspx&quot;,&quot;minWidth&quot;:20,&quot;maxWidth&quot;:10000,&quot;minHeight&quot;:20,&quot;maxHeight&quot;:10000,&quot;locked&quot;:false}"></td>
+			</tr>
+		</tbody></table><input id="RadSplitter2_ClientState" name="RadSplitter2_ClientState" type="hidden" autocomplete="off"></div></div>
+        </div><input id="contentPane_ClientState" name="contentPane_ClientState" type="hidden" autocomplete="off" value="{&quot;_originalWidth&quot;:&quot;&quot;,&quot;_originalHeight&quot;:&quot;&quot;,&quot;_collapsedDirection&quot;:1,&quot;_scrollLeft&quot;:0,&quot;_scrollTop&quot;:0,&quot;_expandedSize&quot;:0,&quot;width&quot;:1680,&quot;height&quot;:833,&quot;collapsed&quot;:false,&quot;contentUrl&quot;:&quot;&quot;,&quot;minWidth&quot;:46,&quot;maxWidth&quot;:10000,&quot;minHeight&quot;:20,&quot;maxHeight&quot;:10000,&quot;locked&quot;:false}"></td>
+	</tr>
+</tbody></table><input id="RadSplitter1_ClientState" name="RadSplitter1_ClientState" type="hidden" autocomplete="off"></div></div>
+    <div id="ctl07" style="z-index:12345;display:none;">
+	<div id="ctl07_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a onclick="$find(&#39;{0}&#39;).close(true);" class="rwPopupButton" href="javascript:void(0);">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="ctl07_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter(&#39;{0}&#39;, event, this);" type="text" class="rwDialogInput" value="{2}">
+			    </div>
+			    <div>
+				    <a onclick="$find(&#39;{0}&#39;).close(this.parentNode.parentNode.getElementsByTagName(&#39;input&#39;)[0].value);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find(&#39;{0}&#39;).close(null);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="ctl07_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find(&#39;{0}&#39;).close(true);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find(&#39;{0}&#39;).close(false);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="ctl07_ClientState" name="ctl07_ClientState" type="hidden">
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Telerik.Web.UI.RadSplitter._preInitialize("RadSplitter1");Telerik.Web.UI.RadPane._preInitialize("topPane", "RadSplitter1", "", "",  0, 0, "False");Telerik.Web.UI.RadPane._preInitialize("contentPane", "RadSplitter1", "", "",  1, 1, "True");Telerik.Web.UI.RadSplitter._preInitialize("RadSplitter2");Telerik.Web.UI.RadPane._preInitialize("leftPane", "RadSplitter2", "", "RadSplitBar1",  0, 0, "False");Telerik.Web.UI.RadSplitBar._preInitialize("RadSplitBar1", "RadSplitter2", "leftPane", "rightPane", 1, 0);Telerik.Web.UI.RadPane._preInitialize("rightPane", "RadSplitter2", "RadSplitBar1", "",  2, 1, "True");;(function() {
+                        function loadHandler() {
+                            var hf = $get('RadStyleSheet1_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Web.UI, Version=2014.2.724.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4:zh-CN:b3bb75dd-6103-4997-8feb-efbc43ce5875:ef4a543:5c0abcde:1c2121e:92753c09;Telerik.Web.UI.Skins, Version=2014.2.724.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4:zh-CN:b75d2efa-8dcd-4c28-9037-d5ad9e3cb5ba:4a5b15d9:317d172d:3e748c5d:2aabe03f';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadFormDecorator, {"_renderMode":1,"clientStateFieldID":"RadFormDecorator1_ClientState","decoratedControls":1039,"enabled":true,"skin":"Simple"}, null, null, $get("RadFormDecorator1"));
+});
+
+WebForm_InitCallback();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_postBackReference":"__doPostBack(\u0027SkinChooser\u0027,\u0027arguments\u0027)","_skin":"Simple","_text":"Simple","_uniqueId":"SkinChooser","_value":"Simple","clientStateFieldID":"SkinChooser_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"value":"Black"},{"value":"BlackMetroTouch"},{"value":"Default"},{"value":"Glow"},{"value":"Metro"},{"value":"MetroTouch"},{"value":"Office2007"},{"value":"Office2010Black"},{"value":"Office2010Blue"},{"value":"Office2010Silver"},{"value":"Outlook"},{"value":"Silk"},{"value":"Simple","selected":true},{"value":"Sitefinity"},{"value":"Sunset"},{"value":"Telerik"},{"value":"Vista"},{"value":"Web20"},{"value":"WebBlue"},{"value":"Windows7"}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":12}, null, null, $get("SkinChooser"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPane, {"_collapsedDirection":1,"_expandedSize":0,"_height":"52px","_originalHeight":"52px","_originalWidth":"","_scrollLeft":0,"_scrollTop":0,"_splitterOrientation":0,"clientStateFieldID":"topPane_ClientState"}, null, null, $get("topPane"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPane, {"_collapsedDirection":1,"_expandedSize":0,"_height":"348px","_originalHeight":"348px","_originalWidth":"140px","_scrollLeft":0,"_scrollTop":0,"_splitterOrientation":1,"_width":"140px","clientStateFieldID":"leftPane_ClientState","contentUrl":"/HR/Default2Nav.aspx?mId=21&mode=ESS","scrolling":4}, null, null, $get("leftPane"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadSplitBar, {"_liveResize":false,"_splitterOrientation":1,"clientStateFieldID":"RadSplitBar1_ClientState","collapseMode":2}, null, null, $get("RadSplitBar1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPane, {"_collapsedDirection":1,"_expandedSize":0,"_height":"348px","_originalHeight":"348px","_originalWidth":"","_scrollLeft":0,"_scrollTop":0,"_splitterOrientation":1,"clientStateFieldID":"rightPane_ClientState","scrolling":4}, null, null, $get("rightPane"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadSplitter, {"_attachResizeHandler":false,"_height":"348px","_isNested":true,"_panesBorderSize":0,"_parentPaneId":"contentPane","_registerWithScriptManager":true,"clientStateFieldID":"RadSplitter2_ClientState"}, null, null, $get("RadSplitter2"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPane, {"_childSplitterId":"RadSplitter2","_collapsedDirection":1,"_expandedSize":0,"_originalHeight":"","_originalWidth":"","_scrollLeft":0,"_scrollTop":0,"_splitterOrientation":0,"clientStateFieldID":"contentPane_ClientState","scrolling":4}, null, null, $get("contentPane"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadSplitter, {"_attachResizeHandler":true,"_borderSize":0,"_height":"100%","_isNested":false,"_orientation":0,"_panesBorderSize":0,"_registerWithScriptManager":true,"_visibleDuringInit":false,"_width":"100%","clientStateFieldID":"RadSplitter1_ClientState"}, null, null, $get("RadSplitter1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"behaviors":22,"clientStateFieldID":"ctl07_ClientState","formID":"form1","iconUrl":"","minimizeIconUrl":"","name":"ctl07","skin":"Simple","windowControls":"[]"}, null, null, $get("ctl07"));
+});
+//]]>
+</script>
+</form>
+    
+        <script type="text/javascript">
+            function OpenWindow(url, width, height, modal, closeFun, params, opts) {
+                var w = GetRadWindowManager();
+                var wn = w.open(url);
+                wn.SetWidth(width);
+                wn.SetHeight(height);
+                wn.SetModal(modal);
+                wn.Center();
+                wn.params = params;
+                if(closeFun != null) wn.add_close(closeFun);
+            }
+
+            $(function() { DoInit(); });
+
+            // 关闭父窗口
+            if (window.opener != null && ''.length==0) {
+                if ("1" == "1") {//取得是否关闭的参数
+                    try {
+                        window.opener.opener = null;
+                        window.opener.open('', '_self', '');
+                        window.opener.close();
+                    }
+                    catch (ex) { }
+                }
+            }
+            
+            //网页自动最大化(兼容IE,ff)
+            window.moveTo(0, 0);
+            if (document.all) {
+                window.resizeTo(screen.availWidth, screen.availHeight);
+            } else if (document.layers || document.getElementById) {
+                if (window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                    window.outerHeight = screen.availHeight;
+                }
+            }
+
+            function TopSetTiele(title) { }
+            
+            function DoInit() {
+                //点击顶部后关闭弹出div
+                $("#header").bind("click", function (event) {
+                    event.stopPropagation();
+                    $(".open").attr("class", "dropdown NavItem");
+                    //$(".dropdown ul").hide();
+                });
+            
+                //点击更多与姓名后，弹出与关闭相应的弹出div
+                var item = $(".dropdown");
+                item.bind("click", function (event) {
+                    event.stopPropagation();
+                    var obj = $(this);
+                    var cusNodeCalss = obj.attr("class");
+                    $(".open").attr("class", "dropdown NavItem");
+                    if (cusNodeCalss == "dropdown NavItem") {
+                        obj.attr("class", "dropdown open NavItem");
+                    }
+                });
+
+                var SkinChooser_Input = $("#selectUI");
+                SkinChooser_Input.bind("click", function(event) {
+                    event.stopPropagation();
+                });
+            }
+
+            var FuncCode = "";
+            function ReloadCurMain(url, funcCode) {
+                FuncCode = funcCode;
+                if (funcCode == null) FuncCode = "";
+                url = url.replace("/HR/","");
+                var panel = $find("rightPane");
+                panel.set_contentUrl(url);
+            }
+
+            function OpenGoTo() {
+                window.open('Tip/Goto.aspx?FuncCode=' + FuncCode, '_blank', 'height=600, width=800,toolbar=no, menubar=no,scrollbars=yes, resizable=yes,location=no, status=yes');
+            }
+            
+            var mode = "ESS";
+            //模块切换后默认页
+            function M(obj, argument,index) {
+                $("#navlist li a").removeClass();
+                $(obj).attr("class", "selected");
+                if (index>7) $("#aMore").attr("class", "selected");
+                
+                if (argument == "29" ) {
+                    showWorkDesktop();
+                    if(mode == "ESS") return;//员工自助的工作桌面，不显示左侧菜单栏。
+                } else if(argument == "22") {
+                    showMssDefault();
+                } else if(argument == "32") {
+                    var url = "SOTC/SOTCHome.aspx";
+                    ReloadCurMain(url);
+                } 
+
+                var panel = $find("leftPane");
+                panel.getContentElement().children[0].contentWindow.ReloadRadPanelBar(argument);
+            }
+            
+            function showWorkDesktop() {
+                var url = "Desktop/WorkDesktop.aspx";
+                if (url == "Desktop/WorkDesktopPZH.aspx" || url == "Desktop/WorkDesktopSG.aspx") {
+                    ReloadCurMain(url);
+                    return;
+                }
+                if(mode=="ESS") url = "Desktop/EssDesktop.aspx";
+                ReloadCurMain(url);
+            }
+            
+            function showMssDefault() {
+                var url = "Static/StaticCenter/StaticCenter.aspx";
+                ReloadCurMain(url);
+            }
+            //模块切换后默认页
+
+            //登陆后默认页
+            var isPageLoaded = false;
+            function pageLoad() {
+                if(isPageLoaded) return;
+                isPageLoaded = true;
+                showDefaultPage();
+            }
+            
+            function showDefaultPage() {
+                var url = "Desktop/WorkDesktop.aspx";
+                if (url == "Desktop/WorkDesktopPZH.aspx" || url == "Desktop/WorkDesktopSG.aspx") {
+                    ReloadCurMain(url);
+                    return;
+                }
+                if(mode=="ESS") url = "Desktop/EssDesktop.aspx";
+                else if(mode=="MSS") url = "Desktop/WorkDesktop.aspx";
+                ReloadCurMain(url);
+            }
+            //登陆后默认页
+        </script>
+    
+
+
+<div lang="zh-cn" style="position: absolute; z-index: 100002; display: none; top: 79px; left: 209.609px;"><iframe hidefocus="true" width="9" height="7" frameborder="0" border="0" scrolling="no" src="./HaveResult_files/saved_resource.html" style="width: 186px; height: 198px;"></iframe></div></body></html>

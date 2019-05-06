@@ -1,0 +1,6 @@
+﻿
+/*此文件用来设定主界面logo的位置，以适应不同公司logo的具体情况，logo最大不应超过180*52*/
+#imgLogo {
+    margin-top: 0px;/*上边距*/
+    margin-left: 5px;/*左边距*/
+}

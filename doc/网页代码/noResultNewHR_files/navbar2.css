@@ -1,0 +1,293 @@
+﻿/*以下为设置不同主题下,顶部的背景色*/  
+.RadForm_Default #header {  
+  background-color: #5A5A5A;
+  }
+
+.RadForm_Black #header {
+    background-color: #565656;
+  }
+
+.RadForm_BlackMetroTouch #header {
+  background-color: #555555;}
+
+
+.RadForm_Forest #header {
+  background-color: #46642A;}
+
+
+.RadForm_Glow #header {
+  background-color: #555555;}
+
+.RadForm_Hay #header {
+
+  background-color: #5B5B48;}
+
+
+.RadForm_Office2010Black #header {
+  background-color: #535353;}
+
+
+.RadForm_Sitefinity #header {
+  background-color: #555555;
+  }
+
+.RadForm_Telerik #header {
+  background-color: #525252;}
+
+
+.RadForm_Transparent #header {
+
+  background-color: #535353;
+  }
+
+.RadForm_Metro #header {
+  background-color: #425770;
+  }
+
+
+.RadForm_MetroTouch #header {
+
+  background-color: #455A73;
+  }
+
+.RadForm_Outlook #header {
+
+  background-color: #345C97;
+  }
+
+.RadForm_Office2007 #header {
+  background-color: #455A73;}
+
+
+.RadForm_Office2010Blue #header {
+  background-color: #455A73;
+  }
+
+.RadForm_Office2010Silver #header {
+  background-color: #475C75;
+  }
+
+.RadForm_Silk #header {
+  background-color: #000000;
+  }
+ 
+
+.RadForm_Sunset #header {
+  background-color: #AE3901;
+   }
+
+.RadForm_WebBlue #header {
+  background-color: #3D5B74;
+  }
+
+.RadForm_Web20 #header {
+  background-color: #365C9A;}
+
+
+.RadForm_Vista #header {
+  background-color: #20688C;
+  }
+
+.RadForm_Windows7 #header {
+  background-color: #455A73;
+  }
+
+#header {
+    height: 51px;
+    background:#4171b8;
+    font-family:微软雅黑;
+}
+
+#TopFunDiv {
+    width: 100%;
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  cursor: default;
+  color: #FFFFFF;  
+  }
+  
+/*顶部又上角，用户功能块*/
+#UserFunDiv {
+    /*float:right;
+    margin-right: 10px;*/
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+  
+  /*主题选择器*/
+.rcbSlide {
+  z-index: 10000 !important; }
+  
+a {     
+    text-decoration: none
+}
+/*弹出框为相对定位*/
+.dropdown {
+    position: relative
+}
+/*向下的三角箭头*/
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border-top: 4px solid #fff;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+
+}
+/*更多后面的向下的三角箭头的位置*/
+.dropdown .caret {
+    margin-top: 8px;
+    margin-left: 2px
+}
+/*弹出的ul，包含更多模块与人员姓名下面的弹出*/
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 0px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box
+}
+/*姓名下拉ul的位置*/
+.dropdown-menu.pull-right {
+    right: 0;
+    left: auto
+}
+
+
+/*下拉菜单的间隔条*/
+ .divider div
+ {
+     margin-top: 3px;
+     margin-bottom: 3px;
+     border-bottom: 1px solid #e5e5e5 ;
+}
+
+/*菜单已经选择*/
+#navlist .selected {
+    background-color: #FEC359 !important;
+    color:black !important;
+    font-weight:100 !important;  
+}
+/*下拉选项中的a*/
+.dropdown-menu>li>a {
+    position:relative;
+    z-index:10001;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    margin-right:0px !important;
+}
+/*顶部菜单第一级样式*/
+.NavItem a,.NavItem{
+    color:white !important ;
+}
+/*顶部菜单第一级样式的hover*/
+.NavItem a:hover {
+background-color: #FFE290 !important;
+color:black !important;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    color: #3d3e42;
+    text-decoration: none;
+    background-color:#ffad00;    
+}
+.open {
+    z-index: 1000
+}
+.open>.dropdown-menu {
+    display: block
+}
+.nav>li>a {
+    display: block
+}
+.nav>li>a:hover,
+.nav>li>a:focus {
+    text-decoration: none;
+}
+/*ul默认有12px的mrgin，要清除*/
+#header ul {    
+    margin: 0;
+    list-style:none;
+    padding-left: 0px;  
+}
+/*让模块横向排列*/
+#header .nav>li {
+    float: left
+}
+/*冒泡箭头*/
+#header .nav>li>.dropdown-menu:after {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: ''
+}
+
+/*冒泡箭头-姓名下方*/
+#header .nav>li>.dropdown-menu.pull-right:after {
+    right: 13px;
+    left: auto
+}
+
+/*与模块名称及同一级的样式*/
+ #header .nav > li > a {
+    font-size: 14px;
+    padding: 12px 8px 8px 8px;
+    height:26px;
+}
+/*信息条数*/
+.user_numb{
+	background:#ffae00; 
+	padding:3px 5px; 
+	margin-right:3px; 
+	color:#fff;
+	
+}
+/*功能模块ul*/
+#navlist {    
+    margin-left:180px !important; 
+
+}
+ #navlist li {
+    cursor:pointer;
+ }
+#navlist li ul li{
+    margin-left:0px;
+}
+
+ .dropdown-toggle :hover {
+    color:black ;
+ }
+ .dropdown-menu li a {
+    color:black !important;
+}
