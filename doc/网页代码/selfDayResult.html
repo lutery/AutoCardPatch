@@ -1,0 +1,216 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+
+<html>
+<head >
+    <title>日结果</title>   
+	<script src="../WebPub/Js/DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <script src="../WebPub/QryControl/JS/HrScript.aspx" type="text/javascript"></script>
+	<link href="../Main.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body rightMargin="0" onresize="Resize()" scroll="no">
+<form name="Form1" method="post" action="SelfDayResulft.aspx" id="Form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE0MDA3MzQ5MjAPFgIeB1BhcmFtSUQFATQWAgIBD2QWBgIBDw8WAh8ABQE0ZBYGAgMPD2QWAh4Hb25mb2N1cwUfV2RhdGVQaWNrZXIoe2RhdGVGbXQ6J3l5eXlNTSd9KWQCBw8PZBYCHwEFDVdkYXRlUGlja2VyKClkAgsPD2QWAh8BBQ1XZGF0ZVBpY2tlcigpZAILDw8WAh4EVGV4dGVkZAIPDw8WBB4PRGF0YUdyaWRPcHRpb25zMr4YAAEAAAD/////AQAAAAAAAAAMAgAAAEJNeUhSLCBWZXJzaW9uPTEwLjAuMTYwMi4xMDIwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAE1TeXN0ZW0uV2ViLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUBAAAAE015SFIuV2ViUHViLkdyaWRPcHQkAAAAC0FsbG93RGVsZXRlCUFsbG93RWRpdA9BbGxvd0V4Y2VsT3V0ZXILQWxsb3dQYWdpbmcMQXV0b1N1bUZpZWxkC0NvbW1hbmRUZXh0C0N1c3RvbU9yZGVyDERhdGFLZXlGaWVsZA1EZWZhdWx0RmllbGRzEUV4Y2VsT3V0ZXJTcGVjaWFsCEZDYWNoZUlEBkZpbHRlcglGdW5jX0NvZGUIUGFnZVNpemUMUmlnaHRDb250cm9sClNlbGVjdE1vZGUIU2VsZkhlbHARU2hvd0RlZmF1bHRGaWVsZHMLU2hvd1N1bUFyZWEJU29ydEZpZWxkCVN1bUZpZWxkcw1TaW5nVGFibGVOYW1lC1Nob3dBZGQyQ2FuFEdldEEwMTg4QnlLZXlFeHByZXNzDVNob3dTZWxlY3RDb2wLQWxsb3dTY3JvbGwJV2lkdGhNb2RlCkhlaWdodE1vZGUFV2lkdGgGSGVpZ2h0DFNjcm9sbEhlaWdodBFDcmVhdGVFbXB0eUNvbHVtbhJGcm96ZW5Db2x1bW5zQ291bnQRU2hvd051bVJlY29yZExpc3QSTnVtUmVjb3JkTGlzdFZhbHVlEk51bVJlY29yZExpc3RJdGVtcwAAAAAAAQABAQABAQEAAAQAAAABAQEAAQAABAQEBAQAAAABAwEBAQEBAQEIARNNeUhSLldlYlB1Yi5TZWxNb2RlAgAAAAEBAQEBARtNeUhSLldlYlB1Yi5IckdyaWRXaWR0aE1vZGUCAAAAG015SFIuV2ViUHViLkhyR3JpZFdpZHRoTW9kZQIAAAAeU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5Vbml0AwAAAB5TeXN0ZW0uV2ViLlVJLldlYkNvbnRyb2xzLlVuaXQDAAAAHlN5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuVW5pdAMAAAABCAHWAlN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dLCBtc2NvcmxpYiwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAAAAEBAQYEAAAAhwFzZWxlY3QgKiBmcm9tIGtfZGF5ICB3aGVyZSBEdXR5X0RhdGU+PScyMDE5LTA1LTAxJyBhbmQgRHV0eV9EYXRlPD0nMjAxOS0wNS0zMScgYW5kIEEwMTg4PTgzMjYxIG9yZGVyIGJ5IER1dHlfRGF0ZSxTSElGVF9OQU1FLFNISUZUX05PICAABgUAAAAKa19kYXlfS19JRAYGAAAAAAEGBwAAACQ5MzhkZjZlNS1mODdmLTQ2ZmMtYjVkMy0zY2MxZTBjOWRlNDgJBgAAAAYJAAAACTIxMDUwNl8wMRQAAAABBfb///8TTXlIUi5XZWJQdWIuU2VsTW9kZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAABAQAJBgAAAAkGAAAACQYAAAAACQYAAAAAAAX0////G015SFIuV2ViUHViLkhyR3JpZFdpZHRoTW9kZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAB8/////T///8AAAAABfL///8eU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5Vbml0AgAAAAR0eXBlBXZhbHVlBAAiU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5Vbml0VHlwZQMAAAAGAwAAAAXx////IlN5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuVW5pdFR5cGUBAAAAB3ZhbHVlX18ACAMAAAAHAAAAAAAAAADAWEAB8P////L///8B7/////H///8HAAAAAAAAAAAAWUAB7v////L///8B7f////H///8AAAAAAAAAAAAAAAAAAAAAAAAKCRQAAAAEFAAAANYCU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24DAADmAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLktleVZhbHVlUGFpcmAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXVtdCAgJFQAAAAQAAAAEAAAABxUAAAAAAQAAAAQAAAAD5AFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0E6v///+QBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAgAAAANrZXkFdmFsdWUBAQYXAAAACiBUT1AgMTAwMCAGGAAAAAcxMDAw5p2hAef////q////BhoAAAAKIFRPUCA1MDAwIAYbAAAABzUwMDDmnaEB5P///+r///8GHQAAAAsgVE9QIDEwMDAwIAYeAAAACDEwMDAw5p2hAeH////q////BiAAAAABIAYhAAAABuWFqOmDqAseDERBVEFST1dDT1VOVAIVZBYEAgEPPCsACwIADxYSHghQYWdlU2l6ZQIUHgpTaG93Rm9vdGVyaB4JUGFnZUNvdW50AgIeDERhdGFLZXlGaWVsZAUKa19kYXlfS19JRB4LXyFJdGVtQ291bnQCFB4IRGF0YUtleXMWFAL4h5cpAu2HlykC8YeXKQKAiJcpAuyHlykC8IeXKQLvh5cpAvuHlykC/IeXKQLyh5cpAvqHlykC9YeXKQL9h5cpAu6HlykC84eXKQL5h5cpAvaHlykC/4eXKQL0h5cpAveHlykeDVNlbGVjdGVkSW5kZXgC/////w8eFV8hRGF0YVNvdXJjZUl0ZW1Db3VudAIVHgtB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YjIFC2J0bkxvYWREYXRhBQRyYWQxBQRyYWQxBQRyYWQyBQRyYWQyBQRyYWQzBQRyYWQzBSNncmREYXRhJERhdGFHcmlkMSRjdGwwMyRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMDQkY2hrU2VsZWN0ZWQFI2dyZERhdGEkRGF0YUdyaWQxJGN0bDA1JGNoa1NlbGVjdGVkBSNncmREYXRhJERhdGFHcmlkMSRjdGwwNiRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMDckY2hrU2VsZWN0ZWQFI2dyZERhdGEkRGF0YUdyaWQxJGN0bDA4JGNoa1NlbGVjdGVkBSNncmREYXRhJERhdGFHcmlkMSRjdGwwOSRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMTAkY2hrU2VsZWN0ZWQFI2dyZERhdGEkRGF0YUdyaWQxJGN0bDExJGNoa1NlbGVjdGVkBSNncmREYXRhJERhdGFHcmlkMSRjdGwxMiRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMTMkY2hrU2VsZWN0ZWQFI2dyZERhdGEkRGF0YUdyaWQxJGN0bDE0JGNoa1NlbGVjdGVkBSNncmREYXRhJERhdGFHcmlkMSRjdGwxNSRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMTYkY2hrU2VsZWN0ZWQFI2dyZERhdGEkRGF0YUdyaWQxJGN0bDE3JGNoa1NlbGVjdGVkBSNncmREYXRhJERhdGFHcmlkMSRjdGwxOCRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMTkkY2hrU2VsZWN0ZWQFI2dyZERhdGEkRGF0YUdyaWQxJGN0bDIwJGNoa1NlbGVjdGVkBSNncmREYXRhJERhdGFHcmlkMSRjdGwyMSRjaGtTZWxlY3RlZAUjZ3JkRGF0YSREYXRhR3JpZDEkY3RsMjIkY2hrU2VsZWN0ZWQFHWdyZERhdGEkdGNDaGFuZ2VQYWdlJGJ0bkZpcnN0BRxncmREYXRhJHRjQ2hhbmdlUGFnZSRidG5QcmV2BRxncmREYXRhJHRjQ2hhbmdlUGFnZSRidG5OZXh0BRxncmREYXRhJHRjQ2hhbmdlUGFnZSRidG5MYXN0BSFncmREYXRhJHRjQ2hhbmdlUGFnZSRJbWFnZUJ1dHRvbjEFIWdyZERhdGEkdGNDaGFuZ2VQYWdlJEltYWdlQnV0dG9uMgUhZ3JkRGF0YSR0Y0NoYW5nZVBhZ2UkYm5FeGNlbE91dGVyaJYwSwoW3DfQUNulfxs126RPCrI=" />
+
+<script src="../WebPub/Js/PageTurn.js" type="text/JavaScript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A95E8D96" />		    
+<table id="tblMainWithLeftLine">
+	<tr class="tooltop" >
+		<td id="tdToolbar" >
+			<table id="table3" class="toolbar" cellpadding="0" cellspacing="0">
+				<tr>
+				    	
+                    <td>
+<table class="normalTableClassNoLine" >
+	<tr>
+		<td>
+			<input id="DateQuery_rb1" type="radio" name="DateQuery$1" value="rb1" checked="checked" /><label for="DateQuery_rb1">按年月</label>
+			<input name="DateQuery$txtYearMonth" type="text" value="201905" id="DateQuery_txtYearMonth" onfocus="WdatePicker({dateFmt:'yyyyMM'})" /></td>
+		<td>
+			<input id="DateQuery_rb2" type="radio" name="DateQuery$1" value="rb2" /><label for="DateQuery_rb2">按日期</label>
+			<input name="DateQuery$txtDate1" type="text" value="2019-05-01" id="DateQuery_txtDate1" onfocus="WdatePicker()" />
+			<span id="DateQuery_Label1" style="display:inline-block;">-</span>
+			<input name="DateQuery$txtDate2" type="text" value="2019-05-31" id="DateQuery_txtDate2" onfocus="WdatePicker()" /></td>
+		<td>
+			</td>
+	</tr>
+</table>
+		
+
+</td>
+
+                    <td><input type="image" name="btnLoadData" id="btnLoadData" src="..\BtnImg\xianshisj.gif" border="0" /></td>
+                    <td><input id="rad1" type="radio" name="2" value="rad1" /><label for="rad1">正常</label></td>
+                    <td><input id="rad2" type="radio" name="2" value="rad2" /><label for="rad2">异常</label></td>
+                    <td><input id="rad3" type="radio" name="2" value="rad3" /><label for="rad3">全部</label></td>
+				</tr>
+			</table>				
+		</td>
+	</tr>
+	<tr>
+		<td valign="top">
+			<div id="divMainPanel" style="overflow:auto">
+										
+				
+				
+	<table class="normalTableClassNoLine" id="Table1" cellSpacing="0" cellPadding="0" border="0">
+		<tr>
+			<td class="HrGrid"><table class="gridborder" cellspacing="0" cellpadding="3" rules="all" border="1" id="grdData_DataGrid1">
+	<tr class="gridtou">
+		<td width="50">人员姓名</td><td width="80">日期</td><td width="20">时段</td><td width="80">计划开始时间</td><td width="100">上班刷卡</td><td width="80">计划结束时间</td><td width="100">下班刷卡</td><td width="100">班次名称</td><td width="60">迟到分钟数</td><td width="60">早退分钟数</td><td width="80">旷工小时数</td><td width="80">结果</td><td width="80">出勤时间</td><td width="80">实际出勤小时</td><td width="80">请假小时数</td><td width="80">请假名称</td><td width="100">班次补贴</td><td width="80">有效刷卡开始时间</td><td width="80">有效刷卡结束时间</td><td width="80">中间时间</td><td width="80">中间计划休息分钟</td><td width="100">星期（中文）</td><td width="120">班次类别</td><td width="60">是否临时班段</td><td width="80">审核</td><td width="80">异常说明</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-05</td><td>1</td><td>09:00</td><td>09:00</td><td>18:00</td><td>18:23</td><td>弹09:00</td><td>0</td><td>0</td><td>0</td><td>正常</td><td>7.5</td><td>7.5</td><td>0</td><td></td><td></td><td>08:00</td><td>23:59</td><td>12:00</td><td>90</td><td>日</td><td>弹性班</td><td></td><td></td><td></td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-06</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>一</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-07</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>二</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-08</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>三</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-09</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>四</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-10</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>五</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-13</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>一</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-14</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>二</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-15</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>三</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-16</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>四</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-17</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>五</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-20</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>一</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-21</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>二</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-22</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>三</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-23</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>四</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-24</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>五</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-27</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>一</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-28</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>二</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridItem" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-29</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>三</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr><tr class="gridAlterna" onMouseOver="javascript:this.className='tdselectedItem'" onMouseOut="javascript:this.className='TdItem'">
+		<td>程辉</td><td>2019-05-30</td><td>1</td><td>08:00</td><td></td><td>17:00</td><td></td><td>弹08:00</td><td>0</td><td>0</td><td>7.5</td><td>异常</td><td>7.5</td><td>0</td><td>0</td><td></td><td></td><td>07:00</td><td>23:59</td><td>12:00</td><td>90</td><td>四</td><td>弹性班</td><td></td><td></td><td>[漏刷卡][旷工]</td>
+	</tr>
+</table></td>
+			<td valign="top"></td>
+			
+		</tr>
+		<tr>
+			<td class="gridpagenav">
+<script type="text/javascript">
+	function ExeOpenWindow()
+	{
+		alert("");
+	}
+</script>
+<table border="0" cellpadding="1" cellspacing="0" class="normalTableClassNoLine">
+	<tr> 
+		<td>
+		    <table id="grdData_tcChangePage_Table1" cellspacing="0" cellpadding="0" border="0" class="normalTableClassNoLine">
+	<tr class="gridpagenav">
+		<td valign="middle"><input type="image" name="grdData$tcChangePage$btnFirst" id="grdData_tcChangePage_btnFirst" disabled="disabled" title="首页" src="../images/FirstD.gif" border="0" />&nbsp;</td>
+		<td valign="middle"><input type="image" name="grdData$tcChangePage$btnPrev" id="grdData_tcChangePage_btnPrev" disabled="disabled" title="上一页" src="../images/PreViewD.gif" border="0" />&nbsp;</td>
+		<td width="5"></td>
+		<td valign="middle"><input type="image" name="grdData$tcChangePage$btnNext" id="grdData_tcChangePage_btnNext" title="下一页" src="../images/Next.gif" border="0" />&nbsp;</td>
+		<td valign="middle"><input type="image" name="grdData$tcChangePage$btnLast" id="grdData_tcChangePage_btnLast" title="末页" src="../images/Last.gif" border="0" />&nbsp;</td>
+		<td><span id="grdData_tcChangePage_lblPage0">第</span></td>
+		<td><input name="grdData$tcChangePage$txtGoPage" type="text" value="1" id="grdData_tcChangePage_txtGoPage" /></td>
+		<td><span id="grdData_tcChangePage_lblPage">页</span></td>
+		<td valign="middle"><input type="image" name="grdData$tcChangePage$ImageButton1" id="grdData_tcChangePage_ImageButton1" title="转到指定页" src="/HR/BtnImg/go.gif" alt="转到" onclick="return val_num(grdData_tcChangePage_txtGoPage);" border="0" />
+					</td>
+		<td></td>
+		<td align="right">记录数</td>
+		<td><span id="grdData_tcChangePage_lblRecordCount" title="当前页记录号/总记录数">[1-20/21]</span></td>
+		<td align="right" valign="middle"><span id="grdData_tcChangePage_Label1">每页</span></td>
+		<td><input name="grdData$tcChangePage$txtRecord" type="text" value="20" id="grdData_tcChangePage_txtRecord" /></td>
+		<td align="left"><span id="grdData_tcChangePage_Label2">条</span></td>
+		<td align="left"><input type="image" name="grdData$tcChangePage$ImageButton2" id="grdData_tcChangePage_ImageButton2" title="设置分页个数" src="/HR/BtnImg/go.gif" alt="分页" onclick="return val_num(grdData_tcChangePage_txtRecord);" border="0" />
+					</td>
+	</tr>
+</table>
+
+		</td>
+		<td  valign="top"><input type="image" name="grdData$tcChangePage$bnExcelOuter" id="grdData_tcChangePage_bnExcelOuter" title="把数据输出到EXCEL等文件中" src="../BtnImg/excel2007.gif" onclick="var Win = window.open('/HR/WebPub/HrGridExport.aspx','TWebDataGridExport','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=yes,width=360,height=240') ;if(Win){Win.focus();return true;};" border="0" /></td>
+        <td ></td>
+                <td>
+        
+        </td>
+
+	</tr>
+</table>
+</td>
+			<td></td>
+        </tr>
+	</table>
+<script type="text/javascript">
+function CheckAll( checkAllBox, szItemName )
+{
+	var frm = checkAllBox.form ;
+	var actVar = checkAllBox.checked ;
+	for(var i=0, l=frm.length;i< l;i++)
+	{
+		var e=frm.elements[i];
+		if ( e.type=='checkbox' && e.name.indexOf(szItemName) != -1 )
+			e.checked= actVar ;
+	}
+}
+
+function CheckInvert(checkAllBox, szItemName) {
+    var frm = checkAllBox.form;
+    for (var i = 0, l = frm.length; i < l; i++) {
+        var e = frm.elements[i];
+        if (e.type == 'checkbox' && e.name.indexOf(szItemName) != -1)
+            e.checked = !e.checked;
+    }
+}
+
+function GetSelectedKeyString() {
+    var szItemName = "chkSelected";
+    var frm = document.getElementById("chkPageAll").form;
+    var keys = "";
+   
+    for (var i = 0, l = frm.length; i < l; i++) {
+        var e = frm.elements[i];
+        if (e.type == 'checkbox' && e.name.indexOf(szItemName) != -1 && e.checked)
+            keys += e.parentElement.KeyValue + ",";
+    }
+    if (keys.length > 0) {
+        keys = keys.substr(0, keys.length - 1);
+    }
+    return keys;
+}
+
+function ExeDataGridOpenIE(url)
+{
+	window.open(url,"","menubar=no,scrollbars =yes,resizable=yes");
+	return false;
+}
+</script>
+
+			    <input name="hid" type="hidden" id="hid" />
+			</div>
+		</td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+Resize();
+function Resize() {
+    var d = document.getElementById("divMainPanel").style;
+    var b = document.body;
+    d.height = b.clientHeight - 40; //40包括页面（非IE）的工具条与状态栏
+    d.width = b.clientWidth - 3;  //3包括左右二边的空间
+}
+
+</script>
+</body>
+</html>
