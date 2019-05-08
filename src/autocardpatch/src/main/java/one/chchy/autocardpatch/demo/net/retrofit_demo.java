@@ -6,6 +6,7 @@ import one.chchy.autocardpatch.demo.net.ihttp.INewhr;
 import one.chchy.autocardpatch.demo.net.interceptor.AddCookiesInterceptor;
 import one.chchy.autocardpatch.demo.net.interceptor.ReceivedCookiesInterceptor;
 import one.chchy.autocardpatch.security.RSAEncrypt;
+import one.chchy.autocardpatch.vo.DayResult;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,7 +16,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class retrofit_demo {
@@ -131,7 +141,55 @@ public class retrofit_demo {
 
                             Response postResponse  = postSelfDayResult.execute();
 
-                            System.out.println(((ResponseBody)postResponse.body()).string());
+                            String selfDayResultStr = ((ResponseBody)postResponse.body()).string();
+                            System.out.println(selfDayResultStr);
+
+//                            File tmpFile = new File("F:/Test/selfDayResult.html");
+//                            if (tmpFile.exists()){
+//                                tmpFile.delete();
+//                            }
+//
+//                            tmpFile.createNewFile();
+//
+//                            OutputStream fileOutpu = new FileOutputStream(tmpFile);
+//
+//                            fileOutpu.write(selfDayResultStr.getBytes("utf-8"));
+//                            fileOutpu.flush();
+//                            fileOutpu.close();
+
+                            Document dayResultDoc = Jsoup.parse(selfDayResultStr);
+                            Elements tdItems = dayResultDoc.getElementsByClass("TdItem");
+
+                            List<DayResult> dayResults = new ArrayList<>();
+                            for (Element tdItem : tdItems){
+                                Element onWorkTime = tdItem.child(4);
+                                Element offWorkTime = tdItem.child(6);
+                                Element result = tdItem.child(11);
+                                Element date = tdItem.child(1);
+
+                                if (result.data().equals("正常")){
+                                    continue;
+                                }
+
+                                DayResult dayResult = new DayResult();
+                                if (onWorkTime.data() == null || onWorkTime.data().equals("")){
+                                    dayResult.setOnWork(false);
+                                }
+
+                                if (offWorkTime.data() == null || offWorkTime.data().equals("")){
+                                    dayResult.setOffWork(false);
+                                }
+
+                                try {
+                                    dayResult.setWorkDate(new SimpleDateFormat("yyyy-MM-dd").parse(date.data()));
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            dayResults.forEach(dayResult -> {
+                                System.out.println(dayResult.toString());
+                            });
 
                         } catch (IOException e) {
                             e.printStackTrace();
