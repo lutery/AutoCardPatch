@@ -158,7 +158,7 @@ public class retrofit_demo {
 //                            fileOutpu.close();
 
                             Document dayResultDoc = Jsoup.parse(selfDayResultStr);
-                            Elements tdItems = dayResultDoc.getElementsByClass("TdItem");
+                            Elements tdItems = dayResultDoc.select("table.gridborder > tbody").select("tr");
 
                             List<DayResult> dayResults = new ArrayList<>();
                             for (Element tdItem : tdItems){
@@ -167,21 +167,22 @@ public class retrofit_demo {
                                 Element result = tdItem.child(11);
                                 Element date = tdItem.child(1);
 
-                                if (result.data().equals("正常")){
+                                if (result.text().equals("正常")){
                                     continue;
                                 }
 
                                 DayResult dayResult = new DayResult();
-                                if (onWorkTime.data() == null || onWorkTime.data().equals("")){
+                                if (onWorkTime.text() == null || onWorkTime.text().equals("")){
                                     dayResult.setOnWork(false);
                                 }
 
-                                if (offWorkTime.data() == null || offWorkTime.data().equals("")){
+                                if (offWorkTime.text() == null || offWorkTime.text().equals("")){
                                     dayResult.setOffWork(false);
                                 }
 
                                 try {
-                                    dayResult.setWorkDate(new SimpleDateFormat("yyyy-MM-dd").parse(date.data()));
+                                    dayResult.setWorkDate(new SimpleDateFormat("yyyy-MM-dd").parse(date.text()));
+                                    dayResults.add(dayResult);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
